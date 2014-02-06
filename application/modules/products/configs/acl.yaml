@@ -1,0 +1,30 @@
+mvc:
+  products:
+    index:
+      index:
+        allow: guest
+      create:
+        allow: guest
+      search-products:
+        allow: guest
+      complete:
+        allow: guest
+      plan-info:
+        allow: guest
+      complete-payment:
+        allow: guest
+      canceled-payment:
+        allow: guest
+    management:
+      allow: guest
+    tires-management:
+          allow: admin
+    discs-management:
+          allow: admin
+    category-tires:
+          allow: guest
+    category-discs:
+          allow: guest
+    cli:
+      check-status:
+        allow: guest

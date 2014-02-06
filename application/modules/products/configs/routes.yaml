@@ -1,0 +1,19 @@
+products:
+  type: Zend_Controller_Router_Route_Static
+  route: /products
+  defaults:
+    module: index
+    controller: index
+    action: index
+productsedit:
+  route: /products/management/edit/:id
+  defaults:
+    module: products
+    controller: management
+    action: edit
+tiresedit:
+  route: /products/tires-management/edit/:id
+  defaults:
+    module: products
+    controller: tires-management
+    action: edit

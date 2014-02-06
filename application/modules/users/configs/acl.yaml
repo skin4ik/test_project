@@ -1,0 +1,31 @@
+mvc:
+  users:
+    auth:
+      allow: guest
+      deny: user
+    api:
+      allow: guest
+    index:
+      allow: user
+    feedback:
+      allow: guest
+    login:
+      allow: guest
+      index:
+        allow: guest
+        deny: user
+      logout:
+        allow: user
+        deny: guest
+      recover-password:
+        allow: guest
+        deny: user
+    profile:
+      allow: user
+      view:
+        allow: guest
+    register:
+      allow: guest
+      deny: user
+    management:
+      allow: admin

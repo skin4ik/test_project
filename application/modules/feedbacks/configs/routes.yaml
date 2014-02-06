@@ -1,0 +1,13 @@
+feedbacks:
+  type: Zend_Controller_Router_Route_Static
+  route: /feedbacks
+  defaults:
+    module: feedbacks
+    controller: index
+    action: index
+feedbacksedit:
+  route: /feedbacks/management/edit/:id
+  defaults:
+    module: feedbacks
+    controller: management
+    action: edit

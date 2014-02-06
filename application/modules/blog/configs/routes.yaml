@@ -1,0 +1,36 @@
+blogcategory:
+ route: blog/category/:alias/*
+ defaults:
+   module: blog
+   controller: index
+   action: category
+blogauthor:
+ route: blog/author/:login/*
+ defaults:
+   module: blog
+   controller: index
+   action: author
+blogpost:
+ route: blog/post/:alias
+ defaults:
+   module: blog
+   controller: post
+   action: index
+blogpostcreate:
+ route: blog/post/create
+ defaults:
+   module: blog
+   controller: post
+   action: create
+blogauthorrss:
+ route: blog/rss/author/:login
+ defaults:
+   module: blog
+   controller: rss
+   action: author
+blogcategoryrss:
+ route: blog/rss/category/:alias
+ defaults:
+   module: blog
+   controller: rss
+   action: category

@@ -1,0 +1,58 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: i.mischenko
+ * Date: 2/4/14
+ * Time: 6:05 PM
+ */
+
+?>
+    <article id="userinfo" class='producttopurchase'>
+        <hgroup>
+            <h2>User: <?php echo $this->arrRequestInfo[0]['username'] ?></h2>
+
+            <h3>Telephone: <?php echo $this->arrRequestInfo[0]['telephone']; ?></h3>
+
+            <h3>Count of products: <?php echo count($this->arrRequestInfo) ?></h3>
+
+            <h3>Total price:
+                <?php
+                $totalPrice = 0;
+                foreach ($this->arrRequestInfo as $requestInfo) {
+                    $totalPrice += $requestInfo['price_out'];
+                }
+                echo $totalPrice;
+                ?>
+            </h3>
+        </hgroup>
+    </article>
+<?php foreach ($this->arrRequestInfo as $requestInfo): ?>
+    <?php
+
+    if ($requestInfo['category_id'] == 1) {
+        echo "<article class='producttopurchase'>";
+        echo "<div class='price'>" . $requestInfo['price_out'] . "</div>";
+        echo "<img src='" . $requestInfo['image_path'] . "'>";
+        echo "<div class='requestinfo'><a href='/shiny/" . $requestInfo['alias'] . "'>" . $requestInfo['name'] . "</a></div><br>";
+        echo "<div class='productinfo'>Width tire: " . $requestInfo['width_tire'] . "<br>";
+        echo "Diameter tire: " . $requestInfo['diameter_tire'] . "<br>";
+        echo "Profile tire: " . $requestInfo['profile_tire'] . "<br>";
+        echo "Seasonality tire: " . $requestInfo['seasonality_tire'] . "</div>";
+
+        echo "</article>";
+    } elseif ($requestInfo['category_id'] == 2) {
+        echo "<article class='producttopurchase'>";
+        echo "<div class='price'>" . $requestInfo['price_out'] . "</div>";
+        echo "<img src='" . $requestInfo['image_path'] . "'>";
+        echo "<div class='requestinfo'><a href='/diski/" . $requestInfo['alias'] . "'>" . $requestInfo['name'] . "</a></div><br>";
+        echo "<div class='productinfo'>Diameter disc: " . $requestInfo['diameter_disc'] . "<br>";
+        echo "Width disc: " . $requestInfo['width_disc'] . "<br>";
+        echo "Type disc: " . $requestInfo['type_disc'] . "<br>";
+        echo "PCD disc: " . $requestInfo['pcd_disc'] . "<br>";
+        echo "ET disc: " . $requestInfo['et_disc'] . "</div>";
+
+
+        echo "</article>";
+    }
+    ?>
+<?php endforeach; ?>

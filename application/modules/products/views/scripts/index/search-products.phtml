@@ -1,0 +1,23 @@
+<h1>Results of search:</h1>
+<hr/>
+<?php if ($this->paginator->count()): ?>
+    <?php foreach ($this->paginator as $row): ?>
+        <?php
+
+        echo "<article>";
+        if ($row->category_id == Products_Model_Product::CATEGORY_TIRES_ID) {
+            echo "<a href='/shiny/" . $row->alias . "'><button class='more btn btn-success'>More...</button></a>";
+            echo "<img src='" . $row->image_path . "'>";
+            echo "<a href='/shiny/" . $row->alias . "'>" . $row->name . "</a>";
+        } elseif ($row->category_id == Products_Model_Product::CATEGORY_DISCS_ID) {
+            echo "<a href='/diski/" . $row->alias . "'><button class='more btn btn-success'>More...</button></a>";
+            echo "<img src='" . $row->image_path . "'>";
+            echo "<a href='/diski/" . $row->alias . "'>" . $row->name . "</a>";
+        }
+        echo "</article>";
+        ?>
+    <?php endforeach; ?>
+<?php else: ?>
+    <h4><?php echo $this->__('No search results') ?></h4>
+<?php endif ?>
+<?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml'); ?>

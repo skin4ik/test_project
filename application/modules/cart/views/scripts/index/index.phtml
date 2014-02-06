@@ -1,0 +1,23 @@
+<h1>Your Cart</h1>
+<hr/>
+<h3>Enter your contacts</h3><br>
+<?php echo $this->contactsForm; ?>
+<hr/>
+<h3>Your products</h3><br>
+
+<?php if (is_array($this->arrProductsFromCart)): ?>
+    <?php echo "<button class=\"removeFromCart btn btn-danger\" data-idprodcart=\"\" data-removeall=\"true\">Remove All</button><br>";?>
+    <?php foreach ($this->arrProductsFromCart as $productInfo): ?>
+        <?php
+        echo "<article>";
+        echo "<button class=\"removeFromCart btn btn-warning\" data-idprodcart=" . $productInfo['id'] . " data-removeall='false'>Remove</button>";
+        echo "<img src='" . $productInfo['image_path'] . "'>";
+        echo "<p><strong>Name: " . $productInfo['name'] . "</strong></p>";
+        echo "<p>Price: " . $productInfo['price_out'] . "</p>";
+        echo "</article>";
+        ?>
+    <?php endforeach; ?>
+<?php else: echo "<p>" . $this->arrProductsFromCart . "</p>"; ?>
+<?php endif; ?>
+
+

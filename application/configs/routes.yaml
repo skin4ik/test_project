@@ -1,0 +1,24 @@
+productcategorytires:
+  route: /shiny
+  defaults:
+    module: products
+    controller: category-tires
+    action: index
+productcategorydiscs:
+  route: /diski
+  defaults:
+    module: products
+    controller: category-discs
+    action: index
+producttiresinfo:
+  route: /shiny/:alias
+  defaults:
+    module: products
+    controller: index
+    action: index
+productdiscsinfo:
+  route: /diski/:alias
+  defaults:
+    module: products
+    controller: index
+    action: index

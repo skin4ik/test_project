@@ -1,0 +1,36 @@
+<div>
+    <article>
+        <header><h3>Categories:</h3></header>
+        <p>
+        <ul>
+            <?php
+            if ($this->arrCategories != false) {
+                foreach ($this->arrCategories as $arrCategoryInfo) {
+                    echo "<li><a href='/" . $arrCategoryInfo['category_alias'] . "'>" . strtoupper($arrCategoryInfo['category_name']) . "</a></li><br/>";
+                }
+            } else {
+                echo "Категорий не найдено";
+            }
+            ?>
+        </ul>
+        </p>
+    </article>
+    <article>
+        <header><h3>Search:</h3></header>
+        <p>
+            <?php echo $this->formSearch; ?>
+        </p>
+    </article>
+    <article>
+        <header><h3>Search by tires:</h3></header>
+        <p>
+            <?php echo $this->formSearchTires; ?>
+        </p>
+    </article>
+    <article>
+        <header><h3>Search by discs:</h3></header>
+        <p>
+            <?php echo $this->formSearchDiscs; ?>
+        </p>
+    </article>
+</div>

@@ -1,0 +1,21 @@
+dashboard:
+  RequestToPurchase:
+    label: Requests to purchase
+    uri:
+    class: requestsToPurchase
+    order: 13
+    pages:
+      edit:
+        label: All requests
+        module: cart
+        controller: management
+        action: index
+        route: default
+default:
+  Cart:
+    label: Cart
+    route: default
+    module: cart
+    controller: index
+    action: index
+    order: 99

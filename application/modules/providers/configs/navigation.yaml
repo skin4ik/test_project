@@ -1,0 +1,13 @@
+dashboard:
+  providers:
+    label: Providers
+    uri:
+    class: provider
+    order: 14
+    pages:
+      edit:
+        label: All Providers
+        module: providers
+        controller: management
+        action: index
+        route: default

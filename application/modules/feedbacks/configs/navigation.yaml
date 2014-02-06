@@ -1,0 +1,21 @@
+dashboard:
+  feedbacks:
+    label: Feedbacks
+    uri:
+    class: feedback
+    order: 13
+    pages:
+      edit:
+        label: All Feedbacks
+        module: feedbacks
+        controller: management
+        action: index
+        route: default
+default:
+  Feedbacks:
+    label: Feedbacks
+    route: default
+    module: feedbacks
+    controller: index
+    action: index
+    order: 99

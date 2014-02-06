@@ -1,0 +1,11 @@
+<h1>Feedback</h1>
+<hr/>
+<?php echo $this->form; ?>
+<hr/>
+<h3>Answers</h3>
+<?php
+foreach ($this->feedbacks as $feedback) {
+    echo("<article> Пользователь <b>" . $feedback['feedback_username'] . "</b> ( " . $feedback['feedback_email'] . " ) написал сообщение: \"" .
+        $feedback['feedback_message'] . "\"<hr/> Админ ответил: \"" . $feedback['feedback_answer'] . "\"</article>");
+}
+?>

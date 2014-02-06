@@ -1,0 +1,13 @@
+dashboard:
+  brands:
+    label: Brands
+    uri:
+    class: brand
+    order: 14
+    pages:
+      edit:
+        label: All Brands
+        module: brands
+        controller: management
+        action: index
+        route: default

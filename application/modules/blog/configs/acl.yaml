@@ -1,0 +1,12 @@
+mvc:
+  blog:
+    index:
+      allow: guest
+    post:
+      allow: guest
+    rss:
+      allow: guest
+    images:
+      allow: user
+    management:
+      allow: admin

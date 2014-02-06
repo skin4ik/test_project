@@ -1,0 +1,7 @@
+cart:
+  type: Zend_Controller_Router_Route_Static
+  route: /cart
+  defaults:
+    module: cart
+    controller: index
+    action: index

@@ -1,0 +1,16 @@
+<h1>Category: Tires</h1>
+<hr/>
+<?php if ($this->paginator->count()): ?>
+    <?php foreach ($this->paginator as $row): ?>
+        <?php
+        echo "<article>";
+        echo "<a href='/shiny/" . $row->alias . "'><button class='more btn btn-success'>More...</button></a>";
+        echo "<img src='" . $row->image_path . "'>";
+        echo "<a href='/shiny/" . $row->alias . "'>" . $row->name . "</a>";
+        echo "</article>";
+        ?>
+    <?php endforeach; ?>
+<?php else: ?>
+    <h4><?php echo $this->__('No posts') ?></h4>
+<?php endif ?>
+<?php echo $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml'); ?>

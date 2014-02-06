@@ -1,0 +1,19 @@
+dashboard:
+  products:
+    label: Products
+    uri:
+    class: product
+    order: 14
+    pages:
+      discsedit:
+        label: All Discs
+        module: products
+        controller: discs-management
+        action: index
+        route: default
+      tiresedit:
+        label: All Tires
+        module: products
+        controller: tires-management
+        action: index
+        route: default

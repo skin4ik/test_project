@@ -1,0 +1,13 @@
+brands:
+  type: Zend_Controller_Router_Route_Static
+  route: /brands
+  defaults:
+    module: brands
+    controller: index
+    action: index
+brandsedit:
+  route: /brands/management/edit/:id
+  defaults:
+    module: brands
+    controller: management
+    action: edit

@@ -1,0 +1,19 @@
+<div class="span3">
+<h4><a href="<?php echo $this->url(array('module'=>'blog', 'controller'=>'management'))?>"><i class="icon-pencil"></i> Blog</a></h4>
+<table class="table table-condensed well">
+  <tbody>
+    <tr>
+      <th>Total Posts</th>
+      <td width="50px"><?php echo $this->totalPosts ?></td>
+    </tr>
+    <tr>
+      <th>Public Posts</th>
+      <td><?php echo $this->publicPosts ?></td>
+    </tr>
+    <tr>
+      <th>Active Users</th>
+      <td><?php echo $this->activeUsers ?></td>
+    </tr>
+  </tbody>
+</table>
+</div>

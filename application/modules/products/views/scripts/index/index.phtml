@@ -1,0 +1,132 @@
+<article>
+    <?php
+    if (!isset($_SESSION['id']) || count($_SESSION['id']) == 0) {
+        echo "<button class=\"btn btn-info addToCart\" data-id=" . $this->arrProductInfo['id'] . ">Add to cart</button>";
+    } else {
+        $buttonAdd = true;
+        foreach ($_SESSION['id'] as $id) {
+            if ($this->arrProductInfo['id'] == $id) {
+                echo "<button class=\"btn btn-danger removeFromCart\" data-idprodcart=" . $this->arrProductInfo['id'] . ">Remove from cart</button>";
+                $buttonAdd = false;
+                break 1;
+            }
+        }
+        if ($buttonAdd == true) echo "<button class=\"btn btn-info addToCart\" data-id=" . $this->arrProductInfo['id'] . ">Add to cart</button>";
+    }
+
+    ?>
+
+    <?php
+    if ($this->arrProductInfo['category_id'] == '1'): ?>
+
+        <p><img src="<?php echo $this->arrProductInfo['image_path']; ?>"></p>
+
+        <p>Name product: <?php echo $this->arrProductInfo['name']; ?></p>
+
+        <p>Width tire: <?php echo $this->arrProductInfo['width_tire']; ?></p>
+
+        <p>Profile tire: <?php echo $this->arrProductInfo['profile_tire']; ?></p>
+
+        <p>Diameter tire: <?php echo $this->arrProductInfo['diameter_tire']; ?></p>
+
+        <p>Seasonality tire: <?php echo $this->arrProductInfo['seasonality_tire']; ?></p>
+
+        <p>Brand id: <?php echo $this->arrProductInfo['brand_id']; ?></p>
+
+        <p>Model: <?php echo $this->arrProductInfo['model']; ?></p>
+
+        <p>Price: <?php echo $this->arrProductInfo['price_out']; ?></p>
+        <hr/>
+        <h3>
+            Other similar tires:
+        </h3>
+        <table class="table table-striped table-bordered">
+            <thead class="btn-info">
+            <tr>
+                <td>Name</td>
+                <td>Width tire</td>
+                <td>Profile tire</td>
+                <td>Diameter tire</td>
+                <td>Seasonality tire</td>
+                <td>Price</td>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $i = 0;
+            foreach ($this->arrSimilarProductInfo as $similarProductInfo) {
+                echo "<tr>";
+                echo "<td><a href='/shiny/" . $similarProductInfo['alias'] . "'>" . $similarProductInfo['name'] . "</a></td>";
+                echo "<td>" . $similarProductInfo['width_tire'] . "</td>";
+                echo "<td>" . $similarProductInfo['profile_tire'] . "</td>";
+                echo "<td>" . $similarProductInfo['diameter_tire'] . "</td>";
+                echo "<td>" . $similarProductInfo['seasonality_tire'] . "</td>";
+                echo "<td>" . $similarProductInfo['price_out'] . "</td>";
+                echo "</tr>";
+            }
+            $i++;
+            ?>
+            </tbody>
+        </table>
+
+    <?php
+    elseif
+    ($this->arrProductInfo['category_id'] == '2'
+    ) :?>
+        <p><img src="<?php echo $this->arrProductInfo['image_path']; ?>"></p>
+
+        <p>Name product: <?php echo $this->arrProductInfo['name']; ?></p>
+
+        <p>Width tire: <?php echo $this->arrProductInfo['diameter_disc']; ?></p>
+
+        <p>Profile tire: <?php echo $this->arrProductInfo['type_disc']; ?></p>
+
+        <p>Diameter tire: <?php echo $this->arrProductInfo['width_disc']; ?></p>
+
+        <p>Seasonality tire: <?php echo $this->arrProductInfo['pcd_disc']; ?></p>
+
+        <p>Brand id: <?php echo $this->arrProductInfo['et_disc']; ?></p>
+
+        <p>Brand id: <?php echo $this->arrProductInfo['brand_id']; ?></p>
+
+        <p>Model: <?php echo $this->arrProductInfo['model']; ?></p>
+
+        <p>Price: <?php echo $this->arrProductInfo['price_out']; ?></p>
+
+        <hr/>
+        <h3>
+            Other similar tires:
+        </h3>
+        <table class="table table-striped table-bordered">
+            <thead class="btn-info">
+            <tr>
+                <td>Name</td>
+                <td>Diameter disc</td>
+                <td>Width disc</td>
+                <td>PCD disc</td>
+                <td>ET disc</td>
+                <td>Type disc</td>
+                <td>Price</td>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $i = 0;
+            foreach ($this->arrSimilarProductInfo as $similarProductInfo) {
+                echo "<tr>";
+                echo "<td><a href='/diski/" . $similarProductInfo['alias'] . "'>" . $similarProductInfo['name'] . "</a></td>";
+                echo "<td>" . $similarProductInfo['diameter_disc'] . "</td>";
+                echo "<td>" . $similarProductInfo['width_disc'] . "</td>";
+                echo "<td>" . $similarProductInfo['pcd_disc'] . "</td>";
+                echo "<td>" . $similarProductInfo['et_disc'] . "</td>";
+                echo "<td>" . $similarProductInfo['type_disc'] . "</td>";
+                echo "<td>" . $similarProductInfo['price_out'] . "</td>";
+                echo "</tr>";
+            }
+            $i++;
+            ?>
+            </tbody>
+        </table>
+    <?php endif; ?>
+</article>
+

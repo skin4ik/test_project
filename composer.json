@@ -1,0 +1,50 @@
+{
+    "name": "ZFCore",
+    "description": "ZFCore",
+    "minimum-stability": "dev",
+    "config": {
+        "process-timeout": 1200
+    },
+    "authors": [
+        {
+            "name": "AntonShevchuk",
+            "email": "antonshevchuk@gmail.com"
+        },
+        {
+            "name": "naxel",
+            "email": "naxel@land.ru"
+        },
+        {
+            "name": "MaksSlesarenko"
+        },
+        {
+            "name": "nix-rewolf"
+        },
+        {
+            "name": "bashmach"
+        },
+        {
+            "name": "Baziak",
+            "email": "realbaziak@gmail.com"
+        },
+        {
+            "name": "uglide"
+        },
+        {
+            "name": "galkin"
+        },
+        {
+            "name": "GerasimenkoAlexander",
+            "email": "gerasimenkoalexanderua@gmail.com"
+        }
+    ],
+    "require": {
+        "zendframework/zendframework1": "1.12.*@dev",
+        "phpunit/phpunit": "3.7.*",
+        "opauth/opauth": "*",
+        "opauth/facebook": "*",
+        "opauth/google": "*",
+        "opauth/twitter": "*"
+    }
+
+}

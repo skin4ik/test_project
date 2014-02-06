@@ -1,0 +1,21 @@
+<head>
+    <?php echo $this->headMeta() ?>
+    <?php echo $this->headTitle()->setSeparator(': ') ?>
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <?php $this->headLink()->appendStylesheet($this->baseUrl('/css/install/styles.css'));?>
+    <?php $this->headLink()->appendStylesheet($this->baseUrl('/css/bootstrap.css'));?>
+    <link rel="shortcut icon" type="image/x-icon" href="<?=$this->baseUrl('favicon.ico')?>" />
+    <?php $this->headScript()->appendFile($this->baseUrl('/js/jquery/jquery.js'));?>
+    <?php $this->headScript()->appendFile($this->baseUrl('/js/bootstrap.js'));?>
+    <?php $this->headScript()->appendFile($this->baseUrl('/js/ready.js'));?>
+    <?php $this->headScript()->appendFile($this->baseUrl('/js/messages.js'));?>
+    <?php $this->headScript()->appendFile(
+        '/js/html5.js',
+        'text/javascript',
+        array('conditional' => 'lt IE 9')
+    );?>
+    <?php echo $this->headLink() ?>
+    <?php echo $this->headStyle() ?>
+    <?php echo $this->headScript() ?>
+    <base href="<?php echo $this->baseUrl() ?>"/>
+</head>
